@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[ ]:
+# In[11]:
 
 #builds invoice summary using 'Invoice Summary - Large Template.xlsx' and a given Media Ops Campaign Line Item Report in .csv format from a campaign's SF opportunity
 #data structure: summary (dictionary) / component (list) / placement (dictionary)
@@ -233,7 +233,7 @@ invoice_summary['B8'] = ordered_end_dates[0]
 sequence_locations = list()
 a = len(ordered_componentlist)
 
-for line in invoice_summary.columns[0]:
+for line in invoice_summary['A']:
     if a == 0: break
     if line.value == 'Sequence Number':
         sequence_locations.append(line.row)
@@ -366,14 +366,14 @@ for component, sequence in zip(ordered_componentlist, sequence_locations):
 
 grand_total = 0
 
-for line in invoice_summary.columns[0]:
+for line in invoice_summary['A']:
     if line.value == 'Grand Total':
         grand_total = line.row
         break
 
 #deletes the 'Sequence Number' cells belonging to each of the unused components in the invoice summary in order to exclude them when uploading to Billing Tracker
 
-for line in invoice_summary.columns[0]:
+for line in invoice_summary['A']:
     if line.value == 'Sequence Number' and line.row not in sequence_locations:
         line.value = ''
         
@@ -422,4 +422,9 @@ while True:
                     else: continue
             
             break
+
+
+# In[ ]:
+
+
 
