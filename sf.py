@@ -83,7 +83,7 @@ def categorization(target_name):
     elif re.search('Conference', target_name, flags=re.IGNORECASE):
         category = 'Conference Package'
 
-    elif re.search('Select', target_name, flags=re.IGNORECASE) or re.search('First', target_name, flags=re.IGNORECASE):
+    elif re.search('Select', target_name, flags=re.IGNORECASE) or re.search('First Imp', target_name, flags=re.IGNORECASE):
         category = 'Other'
 
     elif re.search('M01', target_name, flags=re.IGNORECASE) or re.search('320x50', target_name, flags=re.IGNORECASE) or re.search('App', target_name) or re.search('300x50', target_name, flags=re.IGNORECASE):
