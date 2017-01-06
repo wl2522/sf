@@ -288,21 +288,20 @@ b = 0
 for month in itertools.cycle(months_cycle):
     ordered_written_months.append(month)
     b = b + 1
-    if b >= 17:
-        break
+    if b >= 17: break
         
 #fills in each component's headers and month columns with correct style formatting
 #fills in each component's placements and corresponding fields
+#hides unused rows in each component
 #appends 'Bonus' to bonus placement names
 #highlights placements where the 'Approved Reservation Amount' field doesn't match the calculated cost or the 'Imps to Reserve' field is blank in red
 #replaces each red highlighted row's 'Total Cost' formula cell with that placement's 'Approved Reservation Amount' and omits the 'Approved Unit Price'
 #keeps track of the number of red highlighted placements in the invoice summary
-#hides unused rows in each component
 
 c = 0
 d = 14
 e = 0
-f = 5
+f = 4
 
 highlighted = 0
 
@@ -357,7 +356,7 @@ for component, sequence in zip(ordered_componentlist, sequence_locations):
         f = f + 1
         
     e = 0
-    f = 5
+    f = 4
 
 
     print('\n', component, 'finished. \n')
