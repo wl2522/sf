@@ -324,7 +324,7 @@ for component, sequence in zip(ordered_componentlist, sequence_locations):
     c = 0
     d = 14
     
-    for row in range(sequence + 5 + len(summary[component]), sequence + 45, 1):
+    for row in range(sequence + 4 + len(summary[component]), sequence + 45, 1):
         invoice_summary.row_dimensions[row].hidden = True
 
     for placement in summary[component]:
